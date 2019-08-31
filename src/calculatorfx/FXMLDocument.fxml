@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="form" onKeyPressed="#pressKey" prefHeight="342.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadorafx.FXMLDocumentController">
+   <children>
+      <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Button fx:id="btnMinus" layoutX="250.0" layoutY="211.0" mnemonicParsing="false" onAction="#clickOperator" prefHeight="47.0" prefWidth="65.0" text="-" />
+      <Button fx:id="btnEqual" layoutX="325.0" layoutY="210.0" mnemonicParsing="false" onAction="#clickEqual" prefHeight="108.0" prefWidth="65.0" text="=" />
+      <Button fx:id="btnPlus" layoutX="250.0" layoutY="271.0" mnemonicParsing="false" onAction="#clickOperator" prefHeight="47.0" prefWidth="65.0" text="+" />
+      <Button fx:id="btnDelete" layoutX="325.0" layoutY="153.0" mnemonicParsing="false" onAction="#clickDelete" prefHeight="47.0" prefWidth="65.0" text="&lt;-" />
+      <Button fx:id="btnMult" layoutX="250.0" layoutY="153.0" mnemonicParsing="false" onAction="#clickOperator" prefHeight="47.0" prefWidth="65.0" text="*" />
+      <Button fx:id="btnC" layoutX="325.0" layoutY="94.0" mnemonicParsing="false" onAction="#clickC" prefHeight="47.0" prefWidth="65.0" text="C" />
+      <Button fx:id="btnDivision" layoutX="250.0" layoutY="94.0" mnemonicParsing="false" onAction="#clickOperator" prefHeight="47.0" prefWidth="65.0" text="/" />
+      <Button fx:id="btn7" layoutX="25.0" layoutY="94.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="7" />
+      <Button fx:id="btn8" layoutX="100.0" layoutY="94.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="8" />
+      <Button fx:id="btn9" layoutX="175.0" layoutY="94.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="9" />
+      <Button fx:id="btn4" layoutX="25.0" layoutY="153.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="4" />
+      <Button fx:id="btn5" layoutX="100.0" layoutY="153.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="5" />
+      <Button fx:id="btn6" layoutX="175.0" layoutY="153.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="6" />
+      <Button fx:id="btn0" layoutX="25.0" layoutY="271.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="0" />
+      <Button fx:id="btnComma" layoutX="100.0" layoutY="271.0" mnemonicParsing="false" onAction="#clickComma" prefHeight="47.0" prefWidth="65.0" text="," />
+      <Button fx:id="btnNeg" layoutX="175.0" layoutY="271.0" mnemonicParsing="false" onAction="#clickNegative" prefHeight="47.0" prefWidth="65.0" text="+/-" />
+      <Button fx:id="btn3" layoutX="175.0" layoutY="211.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="3" />
+      <Button fx:id="btn2" layoutX="100.0" layoutY="211.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="2" />
+      <Button fx:id="btn1" layoutX="25.0" layoutY="211.0" mnemonicParsing="false" onAction="#clickNumber" prefHeight="47.0" prefWidth="65.0" text="1" />
+      <TextField fx:id="txtNums" alignment="CENTER_RIGHT" disable="true" layoutX="25.0" layoutY="32.0" prefHeight="47.0" prefWidth="361.0" text="0">
+         <font>
+            <Font name="Segoe UI Symbol" size="24.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
