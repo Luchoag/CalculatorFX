@@ -184,10 +184,19 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void pressKey(KeyEvent e) {
-         String ch = e.getText();
+        String ch = e.getText();
         if (isNumeric(ch)) writeNumber(ch);
         KeyCode ke = e.getCode();
-        if (ke.equals(KeyCode.ENTER)) calculate();
+        if (ke.equals(KeyCode.ENTER)) {
+            calculate();
+            firstNumber=0;
+            if (secondNumber==0) secondNumber=0;
+            else secondNumber=getDoubleFromText();
+            operations[0]=false;
+            operations[1]=false;
+            operations[2]=false;
+            operations[3]=false;
+        }
         if (ke.equals(KeyCode.ADD) || ke.equals(KeyCode.SUBTRACT) || 
                 ke.equals(KeyCode.MULTIPLY) || ke.equals(KeyCode.DIVIDE)) {
                     if (!opPressed && (operations[0]||operations[1]||operations[2]||operations[3])) {
@@ -217,12 +226,10 @@ public class FXMLDocumentController implements Initializable {
     
     //Methods   
     private void writeNumber(String number) {
-        if (firstNumber==0) {
-            if (!writing) {
+        if (!writing) {
+            if (firstNumber==0) {
                 txtNums.setText(number);
-                if (!txtNums.getText().equals("0") ) {
-                    writing=true;
-                }
+                firstNumber=getDoubleFromText();
             } else {
                 txtNums.setText(txtNums.getText() + number);
             }
@@ -236,29 +243,20 @@ public class FXMLDocumentController implements Initializable {
         }
         opPressed = false;
     }
-    
-    public static boolean isNumeric(String str) { 
-        try {  
-          Double.parseDouble(str);  
-          return true;
-        } catch(NumberFormatException e){  
-          return false;  
-        }  
-    }  
-    
+       
     private void operation(int opIndex) {
         for (int i=0 ; i<4 ; i++) {
             if (i == opIndex) operations[i] = true;
             else operations[i] = false;
         }
         opPressed = true;
-        writing = false;
+        writing = true;
         writing2 = false;
     }
     
     private void assignNumber() {
         if (isNumeric(txtNums.getText())) {
-            if (firstNumber==0) {
+            if (writing) {
                 firstNumber=getDoubleFromText();
                 secondNumber = 0;
             } else {
@@ -275,6 +273,15 @@ public class FXMLDocumentController implements Initializable {
         if (operations[3]) txtNums.setText(division());
         firstNumber=0;
     }    
+    
+    public static boolean isNumeric(String str) { 
+        try {  
+          Double.parseDouble(str);  
+          return true;
+        } catch(NumberFormatException e){  
+          return false;  
+        }  
+    }      
     
     private Double getDoubleFromText () {
         return Double.parseDouble(txtNums.getText());
