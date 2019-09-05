@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="form" onKeyPressed="#pressKey" prefHeight="342.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadorafx.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="form" onKeyPressed="#pressKey" prefHeight="342.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculatorfx.FXMLDocumentController">
    <children>
       <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <Button fx:id="btnMinus" layoutX="250.0" layoutY="211.0" mnemonicParsing="false" onAction="#clickOperator" prefHeight="47.0" prefWidth="65.0" text="-" />
